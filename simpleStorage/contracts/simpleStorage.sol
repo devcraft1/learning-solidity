@@ -1,5 +1,6 @@
 pragma solidity ^0.8.4;
 
+// Simple storage
 contract simpleStorage{
     uint data;
 
