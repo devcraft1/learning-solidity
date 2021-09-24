@@ -18,8 +18,10 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-//
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const privateKeys = [
+  '1bbee5259f595ae248f0fc0b46d99f18b44c05e0faa43044c33134499d028c76',
+];
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
@@ -70,7 +72,22 @@ module.exports = {
     // provider: () => new HDWalletProvider(mnemonic, `https://network.io`),
     // network_id: 2111,   // This network is yours, in the cloud.
     // production: true    // Treats this network as if it was a public net. (default: false)
-    // }
+    // },
+    // bsc: {
+    //   provider: () =>
+    //     new HDWalletProvider(privateKeys, 'https://bsc-dataseed.binance.org/'),
+    //   network_id: 56,
+    //   skipDryRun: true,
+    // },
+    bscTestnet: {
+      provider: () =>
+        new HDWalletProvider(
+          privateKeys,
+          'https://data-seed-prebsc-1-s1.binance.org:8545/'
+        ),
+      network_id: 97,
+      skipDryRun: true,
+    },
   },
 
   // Set default mocha options here, use special reporters etc.
