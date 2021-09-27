@@ -6,10 +6,10 @@ const simpleSmartContract = new web3.eth.Contract(contractABI, contractAddress);
 console.log(simpleSmartContract);
 
 const showAccounts = web3.eth.getAccounts().then((x) => {
-  if (x.length <= 10) {
+  if (x) {
     return x;
   } else {
-    return x;
+    return 'Account not retrieved';
   }
 });
 
