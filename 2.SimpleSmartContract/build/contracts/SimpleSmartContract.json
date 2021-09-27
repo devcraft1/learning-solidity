@@ -10,7 +10,7 @@
   "sourceMap": "25:32:1:-:0;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "25:32:1:-:0;;;;;",
   "source": "pragma solidity ^0.8.4;\n\ncontract SimpleSmartContract{\n\n}",
-  "sourcePath": "/home/devcraft/Desktop/smart-contracts/frontend/contracts/SimpleSmartContract.sol",
+  "sourcePath": "/home/devcraft/Desktop/smart-contracts/2.SimpleSmartContract/contracts/SimpleSmartContract.sol",
   "ast": {
     "absolutePath": "project:/contracts/SimpleSmartContract.sol",
     "exportedSymbols": {
@@ -108,7 +108,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-27T10:00:26.994Z",
+  "updatedAt": "2021-09-27T18:53:18.510Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
