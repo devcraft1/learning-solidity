@@ -12,7 +12,8 @@
         }
       ],
       "stateMutability": "pure",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"hello\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"pure\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/HelloWorld.sol\":\"HelloWorld\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/HelloWorld.sol\":{\"keccak256\":\"0x4fd63ddcc993c93dba359018e43c59d23ae3dc3ab0eefc46b18a1f741174e1a4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://016140594d068b43d42426d0aebd13fef331c4666adec99cb86d86d11755107b\",\"dweb:/ipfs/QmarixrSqEYqsaVfurqXyyFtPv1XV4vxmGzjJEac5JJEbi\"]}},\"version\":1}",
@@ -1150,9 +1151,17 @@
     "name": "solc",
     "version": "0.8.4+commit.c7e474f2.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x4F6b4D74bfb15C79a8cCf346B3A4a63Ec669052F",
+      "transactionHash": "0x7467c32787d6cbefd002335c8cae877ca85fe548d5f593ec38d1d6e3234b581e"
+    }
+  },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-09-27T17:39:08.685Z",
+  "updatedAt": "2021-09-27T18:24:22.928Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
