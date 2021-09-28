@@ -1,4 +1,4 @@
-const SimpleStorage = artifacts.require('simpleStorage.sol');
+const SimpleStorage = artifacts.require('SimpleStorage.sol');
 
 module.exports = function (deployer) {
   deployer.deploy(SimpleStorage);
