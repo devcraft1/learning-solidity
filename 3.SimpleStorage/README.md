@@ -21,7 +21,7 @@ Deploy to testnet
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const privateKeys = [
-  '1bbee5259f595ae248f0fc0b46d99f18b44c05e0faa43044c33134499d028c76',
+  '<enter address>'
 ];
 module.exports = {
   networks: {
