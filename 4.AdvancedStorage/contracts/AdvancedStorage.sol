@@ -3,21 +3,21 @@
 pragma solidity ^0.8.4;
 
 contract AdvancedStorage {
-    uint [] public ids;
+	uint[] public ids;
 
-    function add(uint _id) public {
-        ids.push(_id);
-    }
+	function add(uint _id) public {
+		ids.push(_id);
+	}
 
-    function get(uint position) view public returns (uint) {
-        return ids[position];
-    }
+	function get(uint position) public view returns (uint) {
+		return ids[position];
+	}
 
-    function getAll() view public returns (uint[] memory) {
-        return ids;
-    }
+	function getAll() public view returns (uint[] memory) {
+		return ids;
+	}
 
-    function getLength()  view public returns (uint) {
-        return ids.length;
-    }
+	function getLength() public view returns (uint) {
+		return ids.length;
+	}
 }
