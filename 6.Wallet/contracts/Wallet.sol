@@ -1,25 +1,23 @@
 // SPDX-License-Identifier:MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
-contract EtherWallet {
-  address payable public owner;
+contract Wallet {
+    address public owner;
 
-  constructor(address payable _owner) {
-    owner = _owner;
-  }
+    constructor(address _owner) {
+        owner = _owner;
+    }
 
-  function deposit() payable public {
-  }
+    function deposit() public payable {}
 
-  function send(address payable to, uint amount) public {
-    if(msg.sender == owner) {
-      to.transfer(amount);
-      return;
-    } 
-    revert('sender is not allowed');
-  }
+    function send(address payable to, uint256 amount) public {
+        if (msg.sender == owner) {
+            return to.transfer(amount);
+        }
+        revert("sender not allowed");
+    }
 
-  function balanceOf() view public returns(uint) {
-    return address(this).balance;
-  }
+    function balanceOf() public view returns (uint256) {
+        return address(this).balance;
+    }
 }
