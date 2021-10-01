@@ -1,4 +1,4 @@
-const Migrations = artifacts.require("Migrations");
+const Migrations = artifacts.require("StringManipulation");
 
 module.exports = function (deployer) {
   deployer.deploy(Migrations);
