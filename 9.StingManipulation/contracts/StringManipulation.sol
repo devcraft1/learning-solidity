@@ -1,30 +1,31 @@
-//SPDX-License-Identifier:MIT
-pragma solidity ^0.8.4;
+// SPDX-License-Identifier:MIT
+pragma solidity ^0.8.0;
 
-contract StringManipulation {
-    function strings(string memory str) public pure returns (uint256) {
+contract Strings {
+    function length(string memory str) public pure returns (uint256) {
         bytes memory str_bytes = bytes(str);
         return str_bytes.length;
     }
 
-    function concatination(string memory str1, string memory str2)
+    function concatenate(string memory str1, string memory str2)
         public
         pure
         returns (string memory)
     {
-        bytes memory str1_bytes = bytes(str1);
-        bytes memory str2_bytes = bytes(str2);
-        string memory str = new string(str1_bytes.length + str2_bytes.length);
+        bytes memory str_bytes1 = bytes(str1);
+        bytes memory str_bytes2 = bytes(str2);
+        string memory str = new string(str_bytes1.length + str_bytes2.length);
+
         bytes memory str_bytes = bytes(str);
 
-        uint256 j = 0;
-        for (uint256 i = 0; i < str_bytes.length; i++) {
-            str_bytes[j] = str1_bytes[i];
-            j++;
+        uint256 k = 0;
+        for (uint256 i = 0; i < str_bytes1.length; i++) {
+            str_bytes[k] = str_bytes1[i];
+            k++;
         }
-        for (uint256 i = 0; i < str_bytes.length; i++) {
-            str_bytes[j] = str2_bytes[i];
-            j++;
+        for (uint256 i = 0; i < str_bytes2.length; i++) {
+            str_bytes[k] = str_bytes2[i];
+            k++;
         }
 
         return string(str_bytes);
