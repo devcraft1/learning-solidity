@@ -1,4 +1,5 @@
-pragma solidity ^0.5.2;
+// SPDX-License-Identifier:MIT
+pragma solidity ^0.8.4;
 
 contract Escrow {
     address public payer;
@@ -10,7 +11,7 @@ contract Escrow {
         address _payer,
         address payable _payee,
         uint256 _amount
-    ) public {
+    ) payable {
         payer = _payer;
         payee = _payee;
         lawyer = msg.sender;
