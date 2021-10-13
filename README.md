@@ -1,7 +1,5 @@
-# Learn Solidity
-Learn Solidity Step by Step
-
-
+# Smart Contracts
+Get a sample of your smart contract and learn how to do complex Dapp algorithms. 
 # Prerequisite
 To Run these examples please follow following steps
 
