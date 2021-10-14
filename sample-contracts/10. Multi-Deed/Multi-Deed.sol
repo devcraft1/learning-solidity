@@ -4,16 +4,16 @@ pragma solidity ^0.8.0;
 contract DeedMultiPayout {
     address public lawyer;
     address payable public beneficiary;
-    uint256 public earliest;
-    uint256 public amount;
-    uint256 public constant PAYOUTS = 10;
-    uint256 public constant INTERVAL = 10;
-    uint256 public paidPayouts;
+    uint public earliest;
+    uint public amount;
+    uint public constant PAYOUTS = 10;
+    uint public constant INTERVAL = 10;
+    uint public paidPayouts;
 
     constructor(
         address _lawyer,
         address payable _beneficiary,
-        uint256 fromNow
+        uint fromNow
     ) payable {
         lawyer = _lawyer;
         beneficiary = _beneficiary;
@@ -26,8 +26,8 @@ contract DeedMultiPayout {
         require(block.timestamp >= earliest, "too early");
         require(paidPayouts < PAYOUTS, "no payout left");
 
-        uint256 elligiblePayouts = (block.timestamp - earliest) / INTERVAL;
-        uint256 duePayouts = elligiblePayouts - paidPayouts;
+        uint elligiblePayouts = (block.timestamp - earliest) / INTERVAL;
+        uint duePayouts = elligiblePayouts - paidPayouts;
         duePayouts = duePayouts + paidPayouts > PAYOUTS
             ? PAYOUTS - paidPayouts
             : duePayouts;
