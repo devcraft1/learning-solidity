@@ -1,4 +1,5 @@
-pragma solidity ^0.6.0;
+// SPDX-License-Identifier:MIT
+pragma solidity >=0.4.22 <0.9.0;
 
 contract BookAService {
     enum Statuses {
@@ -10,8 +11,8 @@ contract BookAService {
 
     event Occupy(address _occupant, uint256 _value);
 
-    constructor() public {
-        owner = msg.sender;
+    constructor() {
+        owner == msg.sender;
         currentStatus = Statuses.Vacant;
     }
 
