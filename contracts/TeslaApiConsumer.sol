@@ -1,3 +1,5 @@
+// SPDX-License-Identifier:MIT
+
 pragma solidity 0.4.24;
 
 import "https://raw.githubusercontent.com/smartcontractkit/chainlink/develop/evm-contracts/src/v0.4/ChainlinkClient.sol";
