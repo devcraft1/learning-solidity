@@ -1,4 +1,4 @@
-pragma solidity ^0.5.8;
+pragma solidity >=0.4.22 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 contract Tinder {
@@ -97,8 +97,8 @@ contract Tinder {
         );
 
         SwipeSession storage swipeSession = swipeSessions[msg.sender];
-        if (swipeSession.start + 86400 <= now) {
-            swipeSession.start = now;
+        if (swipeSession.start + 86400 <= block.timestamp) {
+            swipeSession.start = block.timestamp;
             swipeSession.count = 100;
         }
         require(
@@ -113,7 +113,7 @@ contract Tinder {
         }
         swipes[msg.sender][_userId] = SwipeStatus.Like;
         if (swipes[_userId][msg.sender] == SwipeStatus.Like) {
-            emit NewMatch(msg.sender, _userId, now);
+            emit NewMatch(msg.sender, _userId, block.timestamp);
         }
     }
 
@@ -127,7 +127,7 @@ contract Tinder {
                 swipes[_to][msg.sender] == SwipeStatus.Like,
             "Both users need to have liked each other (match) to send messages"
         );
-        emit NewMessage(msg.sender, _to, _content, now);
+        emit NewMessage(msg.sender, _to, _content, block.timestamp);
     }
 
     function isEmptyString(string memory _str) internal pure returns (bool) {

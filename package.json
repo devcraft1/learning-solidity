@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.8.0",
+    "@openzeppelin/test-helpers": "^0.5.16",
     "abort-controller": "^3.0.0",
     "abstract-level": "^1.0.3",
     "adm-zip": "^0.4.16",

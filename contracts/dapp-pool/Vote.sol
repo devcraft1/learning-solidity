@@ -37,7 +37,7 @@ contract Voting {
     ) public onlyAdmin {
         ballots[nextBallotId].id = nextBallotId;
         ballots[nextBallotId].name = name;
-        ballots[nextBallotId].end = now + offset;
+        ballots[nextBallotId].end = block.timestamp + offset;
         for (uint256 i = 0; i < _choices.length; i++) {
             ballots[nextBallotId].choices.push(Choice(i, _choices[i], 0));
         }
@@ -51,7 +51,7 @@ contract Voting {
             "voter can only vote once for a ballot"
         );
         require(
-            now < ballots[ballotId].end,
+            block.timestamp < ballots[ballotId].end,
             "can only vote until ballot end date"
         );
         votes[msg.sender][ballotId] = true;
@@ -61,7 +61,7 @@ contract Voting {
     //If `pragma experimental ABIEncoderV2`
     function results(uint256 ballotId) external view returns (Choice[] memory) {
         require(
-            now >= ballots[ballotId].end,
+            block.timestamp >= ballots[ballotId].end,
             "cannot see the ballot result before ballot end"
         );
         return ballots[ballotId].choices;

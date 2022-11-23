@@ -1,4 +1,4 @@
-pragma solidity ^0.5.8;
+pragma solidity >=0.4.22 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 //1. Send tweet
@@ -117,9 +117,14 @@ contract Twitter {
         internal
         canOperate(_from)
     {
-        tweets[nextTweetId] = Tweet(nextTweetId, _from, _content, now);
+        tweets[nextTweetId] = Tweet(
+            nextTweetId,
+            _from,
+            _content,
+            block.timestamp
+        );
         tweetsOf[_from].push(nextTweetId);
-        emit TweetSent(nextTweetId, _from, _content, now);
+        emit TweetSent(nextTweetId, _from, _content, block.timestamp);
         nextTweetId++;
     }
 
@@ -128,12 +133,12 @@ contract Twitter {
         address _from,
         address _to
     ) internal canOperate(_from) {
-        uint256 conversationId = uint256(_from) + uint256(_to);
-        conversations[conversationId].push(
-            Message(nextMessageId, _content, _from, _to, now)
-        );
-        emit MessageSent(nextMessageId, _content, _from, _to, now);
-        nextMessageId++;
+        // uint256 conversationId = uint256(_from) + uint256(_to);
+        // conversations[conversationId].push(
+        // Message(nextMessageId, _content, _from, _to, block.timestamp)
+        // );
+        // emit MessageSent(nextMessageId, _content, _from, _to, block.timestamp);
+        // nextMessageId++;
     }
 
     modifier canOperate(address _from) {
