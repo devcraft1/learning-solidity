@@ -20,6 +20,7 @@
     "hardhat": "^2.12.2"
   },
   "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
     "abort-controller": "^3.0.0",
     "abstract-level": "^1.0.3",
     "adm-zip": "^0.4.16",
@@ -105,6 +106,7 @@
     "glob": "^7.2.0",
     "glob-parent": "^5.1.2",
     "graceful-fs": "^4.2.10",
+    "hardhat-contract-sizer": "^2.6.1",
     "has": "^1.0.3",
     "has-flag": "^4.0.0",
     "has-symbols": "^1.0.3",
