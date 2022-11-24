@@ -1,23 +1,22 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.4;
 
 contract AdvancedStorage {
-	uint[] public ids;
+    uint256[] public ids;
 
-	function add(uint _id) public {
-		ids.push(_id);
-	}
+    function add(uint256 _id) public {
+        ids.push(_id);
+    }
 
-	function get(uint position) public view returns (uint) {
-		return ids[position];
-	}
+    function get(uint256 position) public view returns (uint256) {
+        return ids[position];
+    }
 
-	function getAll() public view returns (uint[] memory) {
-		return ids;
-	}
+    function getAll() public view returns (uint256[] memory) {
+        return ids;
+    }
 
-	function getLength() public view returns (uint) {
-		return ids.length;
-	}
+    function getLength() public view returns (uint256) {
+        return ids.length;
+    }
 }
