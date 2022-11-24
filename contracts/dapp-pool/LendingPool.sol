@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity >=0.4.22 <0.9.0;
 
 // - Create a pool contract that accepts deposit from lenders , who earn interest on lending
 // - User  or borrower can borrow some amount of tokens (limited) , and pay back with some interest for some time period.

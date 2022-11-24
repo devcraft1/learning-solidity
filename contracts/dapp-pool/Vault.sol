@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity >=0.4.22 <0.9.0;
 
 /// user can deposit his money
 /// it wll mint some share
